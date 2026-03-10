@@ -23,6 +23,14 @@ Sleep 2.5s
 # 1 — Ownership & Borrowing (already on screen at launch)
 Sleep 2s
 
+# Show step control on ownership demo
+Type "n"
+Sleep 1s
+Type "n"
+Sleep 1s
+Type "p"
+Sleep 1.5s
+
 # 2 — Memory Management
 Type "2"
 Sleep 2s
@@ -43,13 +51,23 @@ Sleep 2s
 Type "6"
 Sleep 3s
 
-# 7 — Type System
+# 7 — Type System — show step control
 Type "7"
 Sleep 2s
+Type "n"
+Sleep 1s
+Type "n"
+Sleep 1.5s
 
-# 8 — Error Handling
+# 8 — Error Handling — show quiz
 Type "8"
 Sleep 2s
+Type "t"
+Sleep 2s
+Type "2"
+Sleep 1.5s
+Type "t"
+Sleep 1s
 
 # 9 — Lifetimes
 Type "9"
@@ -84,10 +102,42 @@ Sleep 2s
 Type "f"
 Sleep 2s
 
+# 16 — Macros (new!) — show step control through all 5 steps
+Type "g"
+Sleep 2s
+Type "n"
+Sleep 1s
+Type "n"
+Sleep 1s
+Type "n"
+Sleep 1s
+Type "n"
+Sleep 1.5s
+
+# Open quiz on macros demo
+Type "t"
+Sleep 2s
+Type "2"
+Sleep 1.5s
+Type "t"
+
 # Speed up to show the speed control feature
 Type "+"
 Type "+"
 Sleep 1.5s
+
+# Konami code — reveal CRAB MODE rainbow
+Up
+Up
+Down
+Down
+Left
+Right
+Left
+Right
+Type "b"
+Type "a"
+Sleep 3s
 
 # Loop back to Demo 1 for a clean ending frame
 Type "1"

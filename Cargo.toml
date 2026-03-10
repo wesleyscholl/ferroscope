@@ -2,10 +2,12 @@
 name = "ferroscope"
 version = "0.1.0"
 edition = "2021"
-description = "See Rust's power in action. Real-time visuals of memory, speed, and zero-cost abstractions. No GC. No compromise."
+rust-version = "1.87"
+description = "16 live interactive Rust demos in your terminal. Ownership, concurrency, async, macros, WASM and more — with quiz mode, step control, and rainbow Konami. No GC. No compromise."
 license = "MIT"
+readme = "README.md"
 repository = "https://github.com/wesleyscholl/ferroscope"
-keywords = ["tui", "visualization", "rust", "performance", "educational"]
+keywords = ["tui", "visualization", "rust", "educational", "interactive"]
 categories = ["command-line-utilities", "visualization"]
 
 [[bin]]
