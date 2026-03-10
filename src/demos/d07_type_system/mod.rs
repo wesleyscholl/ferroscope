@@ -447,7 +447,7 @@ impl Demo for TypeSystemDemo {
                             (60.0_f64, 50.0_f64, "largest<char>"),
                         ];
                         for (cx, cy, label) in copies {
-                            let inline_color = if cx == 5.0 && active_idx % 3 == 0
+                            let inline_color = if cx == 5.0 && active_idx.is_multiple_of(3)
                                 || cx == 33.0 && active_idx % 3 == 1
                                 || cx == 60.0 && active_idx % 3 == 2
                             {

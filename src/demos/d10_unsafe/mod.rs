@@ -157,7 +157,7 @@ impl Demo for UnsafeDemo {
                     .iter()
                     .enumerate()
                     .map(|(i, s)| {
-                        let style = if i % 2 == 0 {
+                        let style = if i.is_multiple_of(2) {
                             Style::default().fg(theme::BORROW_YELLOW)
                         } else {
                             Style::default().fg(theme::STACK_CYAN)

@@ -93,7 +93,7 @@ impl ZeroCostDemo {
 /// Run benchmark: (0..n).filter(|x| x%2==0).map(|x| x*x).sum()
 pub fn run_iterator_bench(n: u64) -> (u64, u64) {
     let start = Instant::now();
-    let result: u64 = (0..n).filter(|x| x % 2 == 0).map(|x| x * x).sum();
+    let result: u64 = (0..n).filter(|x| x.is_multiple_of(2)).map(|x| x * x).sum();
     let ns = start.elapsed().as_nanos() as u64;
     (result, ns.max(1))
 }
@@ -103,7 +103,7 @@ pub fn run_loop_bench(n: u64) -> (u64, u64) {
     let start = Instant::now();
     let mut sum = 0u64;
     for x in 0..n {
-        if x % 2 == 0 {
+        if x.is_multiple_of(2) {
             sum += x * x;
         }
     }
@@ -381,7 +381,10 @@ mod tests {
     fn test_run_iterator_bench_correctness() {
         let (result, ns) = run_iterator_bench(100);
         // sum of squares of even numbers 0..100: 0+4+16+...+9604
-        let expected: u64 = (0u64..100).filter(|x| x % 2 == 0).map(|x| x * x).sum();
+        let expected: u64 = (0u64..100)
+            .filter(|x| x.is_multiple_of(2))
+            .map(|x| x * x)
+            .sum();
         assert_eq!(result, expected);
         assert!(ns >= 1);
     }
@@ -389,7 +392,10 @@ mod tests {
     #[test]
     fn test_run_loop_bench_correctness() {
         let (result, ns) = run_loop_bench(100);
-        let expected: u64 = (0u64..100).filter(|x| x % 2 == 0).map(|x| x * x).sum();
+        let expected: u64 = (0u64..100)
+            .filter(|x| x.is_multiple_of(2))
+            .map(|x| x * x)
+            .sum();
         assert_eq!(result, expected);
         assert!(ns >= 1);
     }
