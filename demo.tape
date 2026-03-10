@@ -1,132 +1,81 @@
 Output assets/demo.gif
 
-Set Shell    "bash"
-Set FontSize 13
-Set Width    1440
-Set Height   810
+Set Shell     "bash"
+Set FontSize  13
+Set Width     1440
+Set Height    810
 Set Framerate 15
-Set Theme    "Dracula"
-Set Padding  16
+Set Theme     "Dracula"
+Set Padding   16
 
-# ── cd into the project (hidden so the shell prompt isn't shown) ─────────────
+# ── Setup (hidden) ────────────────────────────────────────────────────────────
 Hide
-Type "cd /Users/wscholl/ferroscope"
+Type "cd /Users/wscholl/ferroscope && ./target/release/ferroscope --fps 20"
 Enter
-Sleep 0.5s
+Sleep 3s
 Show
 
-# ── Launch the app ────────────────────────────────────────────────────────────
-Type "./target/release/ferroscope --fps 15"
-Enter
+# ── Demo 1: Ownership & Borrowing ─────────────────────────────────────────────
 Sleep 2.5s
 
-# 1 — Ownership & Borrowing (already on screen at launch)
-Sleep 2s
-
-# Show step control on ownership demo
+# Step control — show N/P stepping
 Type "n"
-Sleep 1s
+Sleep 0.8s
 Type "n"
-Sleep 1s
+Sleep 0.8s
+Type "n"
+Sleep 0.8s
 Type "p"
-Sleep 1.5s
+Sleep 1.2s
 
-# 2 — Memory Management
-Type "2"
-Sleep 2s
-
-# 3 — Zero-Cost Abstractions
-Type "3"
-Sleep 2s
-
-# 4 — Fearless Concurrency
+# ── Demo 4: Fearless Concurrency ─────────────────────────────────────────────
 Type "4"
-Sleep 2.5s
-
-# 5 — Async/Await
-Type "5"
-Sleep 2s
-
-# 6 — Performance Benchmarks (live benchmarks — longer dwell)
-Type "6"
 Sleep 3s
 
-# 7 — Type System — show step control
-Type "7"
-Sleep 2s
-Type "n"
-Sleep 1s
-Type "n"
-Sleep 1.5s
+# ── Demo 5: Async/Await ───────────────────────────────────────────────────────
+Type "5"
+Sleep 2.5s
 
-# 8 — Error Handling — show quiz
-Type "8"
-Sleep 2s
-Type "t"
-Sleep 2s
-Type "2"
-Sleep 1.5s
-Type "t"
-Sleep 1s
+# ── Demo 6: Performance Benchmarks ───────────────────────────────────────────
+Type "6"
+Sleep 3.5s
 
-# 9 — Lifetimes
+# ── Demo 9: Lifetimes — open quiz ────────────────────────────────────────────
 Type "9"
 Sleep 2s
-
-# 10 — Unsafe Rust
-Type "0"
+Type "t"
 Sleep 2s
+Type "2"
+Sleep 1.8s
+Type "t"
+Sleep 0.8s
 
-# 11 — WebAssembly (4-step step carousel)
-Type "a"
-Sleep 2.5s
-
-# 12 — System Metrics (live CPU/mem — longer dwell)
+# ── Demo 12: System Metrics (live CPU/mem sparklines) ─────────────────────────
 Type "b"
-Sleep 3s
+Sleep 3.5s
 
-# Toggle explanation panel to show the feature
-Type "e"
-Sleep 1.5s
-Type "e"
-
-# 13 — Compile-Time Guarantees
-Type "c"
-Sleep 2s
-
-# 14 — Cargo Ecosystem
-Type "d"
-Sleep 2s
-
-# 15 — Embedded / no_std
-Type "f"
-Sleep 2s
-
-# 16 — Macros (new!) — show step control through all 5 steps
+# ── Demo 16: Macros — animation + step control ────────────────────────────────
 Type "g"
 Sleep 2s
 Type "n"
-Sleep 1s
+Sleep 0.9s
 Type "n"
-Sleep 1s
+Sleep 0.9s
 Type "n"
-Sleep 1s
+Sleep 0.9s
 Type "n"
 Sleep 1.5s
 
-# Open quiz on macros demo
-Type "t"
-Sleep 2s
-Type "2"
-Sleep 1.5s
-Type "t"
-
-# Speed up to show the speed control feature
+# ── Speed up ─────────────────────────────────────────────────────────────────
 Type "+"
 Type "+"
 Sleep 1.5s
 
-# Konami code — reveal CRAB MODE rainbow
+# ── Back to Demo 1 for Konami finale ─────────────────────────────────────────
+Type "1"
+Sleep 1.5s
+
+# ── Konami code → CRAB MODE 🦀 ───────────────────────────────────────────────
 Up
 Up
 Down
@@ -137,11 +86,7 @@ Left
 Right
 Type "b"
 Type "a"
-Sleep 3s
+Sleep 4s
 
-# Loop back to Demo 1 for a clean ending frame
-Type "1"
-Sleep 2s
-
-# Quit
+# ── Quit ─────────────────────────────────────────────────────────────────────
 Type "q"
